@@ -1,0 +1,210 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Your Portfolio with Interactive Background</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome CDN for Social Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+</head>
+<body>
+    <!-- Canvas for Interactive Background -->
+    <canvas id="interactive-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#hackathons">Hackathons</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Landing Page -->
+    <section id="home">
+        <h1 class="typewriter">Hello, I'm Ario</h1>
+        <p class="description">Welcome to my portfolio! I'm passionate about creating innovative solutions and continuously learning new technologies.</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="robotic_arm.jpg" alt="Robotic Arm Tomato Pollination">
+                </div>
+                <div class="project-info">
+                    <h3>Robotic Arm Tomato Pollination</h3>
+                    <p>A potential alternative for pollination...</p>
+                    <a href="#" class="btn view-details-btn">View Details</a>
+                </div>
+            </div>
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="arcade_game.jpg" alt="Arcade Game">
+                </div>
+                <div class="project-info">
+                    <h3>Arcade Game</h3>
+                    <p>Chess, Pacman, and Connect 4 all in one place!</p>
+                    <a href="#" class="btn view-details-btn">View Details</a>
+                </div>
+            </div>
+            <!-- Project Card 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="paint_project.jpg" alt="Paint Project">
+                </div>
+                <div class="project-info">
+                    <h3>Paint Project</h3>
+                    <p>An alternative to ms paint!</p>
+                    <a href="#" class="btn view-details-btn">View Details</a>
+                </div>
+            </div>
+            <!-- Project Card 4 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="league_fair_teams.jpg" alt="League Fair Teams">
+                </div>
+                <div class="project-info">
+                    <h3>League Fair Teams</h3>
+                    <p>An easy way to make balanced teams in League of Legends!</p>
+                    <a href="#" class="btn view-details-btn">View Details</a>
+                </div>
+            </div>
+            <!-- Project Card 5 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="periodic_trend_analysis.jpg" alt="Periodic Trend Analysis">
+                </div>
+                <div class="project-info">
+                    <h3>Periodic Trend Analysis</h3>
+                    <p>An overcomplicated trading strategy for a video game...</p>
+                    <a href="#" class="btn view-details-btn">View Details</a>
+                </div>
+            </div>
+            <!-- Project Card 6 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="eventsheet.jpg" alt="EventSheet">
+                </div>
+                <div class="project-info">
+                    <h3>EventSheet</h3>
+                    <p>A subscription-based trading tool (for a video game)</p>
+                    <a href="#" class="btn view-details-btn">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hackathons Section -->
+    <section id="hackathons">
+        <h2>Hackathons</h2>
+        <div class="hackathons-container">
+            <!-- Hackathon Card 1 -->
+            <div class="hackathon-card">
+                <div class="hackathon-info">
+                    <h3>NASA Space Apps Local Hackathon (University of Windsor) <span class="placement">2nd Place</span></h3>
+                    <p>Made a webapp for farmers to discuss issues and have easy access to NASA data.</p>
+                    <a href="#" class="btn view-details-btn">View Details</a>
+                </div>
+            </div>
+            <!-- Hackathon Card 2 -->
+            <div class="hackathon-card">
+                <div class="hackathon-info">
+                    <h3>Massey Hacks X <span class="placement">Best Overall</span></h3>
+                    <p>Made a remote controlled rover with a 2 axis arm with a gripper and 3 cameras.</p>
+                    <a href="#" class="btn view-details-btn">View Details</a>
+                </div>
+            </div>
+            <!-- Hackathon Card 3 -->
+            <div class="hackathon-card">
+                <div class="hackathon-info">
+                    <h3>Massey Hacks IX <span class="placement">Best Game</span></h3>
+                    <p>Made a platformer called "Switch-Up"</p>
+                    <a href="#" class="btn view-details-btn">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <a
+                href="https://www.linkedin.com/in/arioo/"
+                target="_blank"
+                class="contact-icon"
+                aria-label="LinkedIn"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+                href="https://www.instagram.com/ariobarin/"
+                target="_blank"
+                class="contact-icon"
+                aria-label="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a
+                href="https://discordapp.com/users/368159951350398977"
+                target="_blank"
+                class="contact-icon"
+                aria-label="Discord"
+            >
+                <i class="fab fa-discord"></i>
+            </a>
+            <a
+                href="https://github.com/Doomsy1"
+                target="_blank"
+                class="contact-icon"
+                aria-label="GitHub"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+            <a
+                href="https://leetcode.com/u/Doomsy/"
+                target="_blank"
+                class="contact-icon"
+                aria-label="LeetCode"
+            >
+                <i class="fas fa-code"></i>
+            </a>
+            <!-- Email Button -->
+            <div class="contact-icon" id="email-button">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <!-- Hidden Email Display -->
+            <div id="email-display" class="email-display">
+                arioostov@gmail.com
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title">Detail Title</h2>
+            <div class="modal-body">
+                <img src="detail-image.jpg" alt="Detail Image" class="modal-image">
+                <p id="modal-description">Detailed information goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
