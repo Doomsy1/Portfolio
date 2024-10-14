@@ -3,10 +3,12 @@
 // Smooth Scroll for Navigation Links and "View My Work" Button
 document.querySelectorAll('nav ul li a, .btn').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-        });
+        if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth',
+            });
+        }
     });
 });
 
@@ -71,7 +73,7 @@ class Particle {
         this.directionY = directionY;
         this.size = size;
         this.color = color;
-        this.speed = 2; // Increased speed from 1 to 2
+        this.speed = 2;
     }
     // Method to draw individual particle
     draw() {
@@ -90,8 +92,8 @@ class Particle {
         if (distance < minDistance && distance > 0) {
             // Calculate angle between particles
             const angle = Math.atan2(dy, dx);
-            // Calculate force magnitude (you can adjust the strength as needed)
-            const force = (minDistance - distance) / distance * 0.1;
+            // Calculate force magnitude
+            const force = ((minDistance - distance) / distance) * 0.1;
 
             // Apply force to both particles in opposite directions
             this.directionX += Math.cos(angle) * force;
@@ -119,8 +121,8 @@ class Particle {
         this.y += this.directionY * this.speed;
 
         // Add random motion to particles
-        this.directionX += (Math.random() - 0.5) * 0.05;
-        this.directionY += (Math.random() - 0.5) * 0.05;
+        this.directionX += (Math.random() - 0.5) * 0.02;
+        this.directionY += (Math.random() - 0.5) * 0.02;
 
         // Mouse interactivity
         let dx = mouse.x - this.x;
@@ -130,8 +132,8 @@ class Particle {
             // Calculate angle
             let angle = Math.atan2(dy, dx);
             // Push particle away from mouse with gradual change
-            this.directionX -= Math.cos(angle) * 0.25;
-            this.directionY -= Math.sin(angle) * 0.25;
+            this.directionX -= Math.cos(angle) * 0.4;
+            this.directionY -= Math.sin(angle) * 0.4;
         }
 
         // Repel from other particles
@@ -156,7 +158,7 @@ function init() {
             Math.random() * (innerHeight - size * 2 - (size * 2)) + size * 2;
         let directionX = Math.random() * 1 - 0.5;
         let directionY = Math.random() * 1 - 0.5;
-        let color = '#ffa0a0';
+        let color = '#ee8080';
 
         particlesArray.push(
             new Particle(x, y, directionX, directionY, size, color)
@@ -179,8 +181,8 @@ function connect() {
                 ctx.strokeStyle = 'rgba(255,255,255,' + opacityValue + ')';
                 ctx.lineWidth = 1;
                 ctx.beginPath();
-                ctx.moveTo(particlesArray[a].x, particlesArray[a].y); // Corrected y-coordinate
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y); // Corrected y-coordinate
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
                 ctx.stroke();
             }
         }
@@ -202,8 +204,6 @@ function animate() {
 window.addEventListener('resize', function () {
     canvas.width = innerWidth;
     canvas.height = innerHeight;
-    // mouse.radius = (canvas.height / 25) * (canvas.width / 25); // Removed dynamic radius
-    // Re-initialize particles to adjust to new canvas size
     init();
 });
 
@@ -213,98 +213,29 @@ window.addEventListener('mouseout', function () {
     mouse.y = undefined;
 });
 
-// Email Toggle Functionality
-const emailButton = document.getElementById('email-button');
-const emailDisplay = document.getElementById('email-display');
-const contactSection = document.getElementById('contact');
+// Flip Card Touch Support for Mobile Devices
+const flipCards = document.querySelectorAll('.flip-card');
 
-// Toggle email display on button click
-emailButton.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent event from bubbling
-    emailDisplay.classList.toggle('show');
-});
-
-// Collapse email display when clicking outside
-document.addEventListener('click', (e) => {
-    if (!contactSection.contains(e.target)) {
-        emailDisplay.classList.remove('show');
-    }
-});
-
-// Collapse email display when scrolling away from contact section
-window.addEventListener('scroll', () => {
-    const rect = contactSection.getBoundingClientRect();
-    if (rect.bottom < 0 || rect.top > window.innerHeight) {
-        emailDisplay.classList.remove('show');
-    }
-});
-
-// Modal Functionality
-const modal = document.getElementById('detail-modal');
-const modalTitle = document.getElementById('modal-title');
-const modalDescription = document.getElementById('modal-description');
-const modalImage = document.querySelector('.modal-image');
-const closeButton = document.querySelector('.close-button');
-
-// Function to open modal with specific content
-function openModal(title, description, imageSrc) {
-    modalTitle.textContent = title;
-    modalDescription.textContent = description;
-    modalImage.src = imageSrc;
-    modalImage.alt = title;
-    modal.classList.add('show');
-}
-
-// Function to close modal
-function closeModal() {
-    modal.classList.remove('show');
-}
-
-// Add event listeners to all "View Details" buttons
-const viewDetailButtons = document.querySelectorAll('.view-details-btn');
-viewDetailButtons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        // Determine if the button is in a project or hackathon card
-        const card = e.target.closest('.project-card, .hackathon-card');
-        const title = card.querySelector('h3').textContent.trim();
-        const description = card.querySelector('p').textContent.trim();
-        // Placeholder image; replace with actual image paths as needed
-        let imageSrc = 'detail-image.jpg';
-        // Optionally, use specific images based on project/hackathon
-        if (title.includes('Robotic Arm')) {
-            imageSrc = 'robotic_arm_detail.jpg';
-        } else if (title.includes('Arcade Game')) {
-            imageSrc = 'arcade_game_detail.jpg';
-        } else if (title.includes('Paint Project')) {
-            imageSrc = 'paint_project_detail.jpg';
-        } else if (title.includes('League Fair Teams')) {
-            imageSrc = 'league_fair_teams_detail.jpg';
-        } else if (title.includes('Periodic Trend Analysis')) {
-            imageSrc = 'periodic_trend_analysis_detail.jpg';
-        } else if (title.includes('EventSheet')) {
-            imageSrc = 'eventsheet_detail.jpg';
-        } else if (title.includes('NASA Space Apps')) {
-            imageSrc = 'nasa_space_apps_detail.jpg';
-        } else if (title.includes('Massey Hacks X')) {
-            imageSrc = 'massey_hacks_x_detail.jpg';
-        } else if (title.includes('Massey Hacks IX')) {
-            imageSrc = 'massey_hacks_ix_detail.jpg';
+flipCards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+        // Prevent the card from flipping when clicking on the "View" button
+        if (e.target.closest('.view-details-btn')) {
+            return;
         }
-
-        // Replace the placeholder image and description with actual content as needed
-        openModal(title, description + " " + "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", imageSrc);
+        card.classList.toggle('touch');
     });
 });
 
-// Close modal when the close button is clicked
-closeButton.addEventListener('click', closeModal);
+// Handle "View" Button Click to Flip Back the Card
+const viewButtons = document.querySelectorAll('.view-details-btn');
 
-// Close modal when clicking outside the modal content
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeModal();
-    }
+viewButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        const flipCard = button.closest('.flip-card');
+        if (flipCard) {
+            flipCard.classList.remove('touch');
+        }
+    });
 });
 
 // Initialize particles and start animation

@@ -30,28 +30,28 @@ a {
 nav {
     position: fixed;
     width: 100%;
-    background: #000; /* Solid black background for full opacity */
-    padding: 20px 40px; /* Adjusted padding for better spacing */
-    margin: 0 auto; /* Center the navbar */
+    background: #000;
+    padding: 20px 40px;
+    margin: 0 auto;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    border-bottom: 2px solid #ff6b6b; /* Optional: Add a bottom border for distinction */
+    border-bottom: 2px solid #ff6b6b;
 }
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center; /* Vertically center the items */
+    align-items: center;
 }
 nav ul li {
-    margin: 0 15px; /* Adjusted margin for tighter spacing */
+    margin: 0 15px;
 }
 nav ul li a {
     color: #fff;
-    font-size: 24px; /* Increased font size as per Change 4 */
-    padding: 10px 20px; /* Increased padding */
+    font-size: 24px;
+    padding: 10px 20px;
     transition: color 0.3s, background 0.3s;
     border-radius: 5px;
 }
@@ -62,18 +62,18 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Section Styles */
 section {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    margin: 80px auto 20px auto; /* Added top margin to account for fixed nav */
-    max-width: 1400px; /* Increased from 1200px to 1400px */
+    margin: 80px auto 20px auto;
+    max-width: 1400px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    color: #fff; /* Ensures text is visible against dark background */
-    padding: 60px 40px; /* Increased padding for wider content area */
+    color: #fff;
+    padding: 60px 40px;
 }
 
 @media (max-width: 1400px) {
     section {
-        max-width: 1200px; /* Revert to original max-width on smaller screens */
+        max-width: 1200px;
     }
 }
 
@@ -86,28 +86,28 @@ section {
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    overflow: hidden; /* Prevent overflow */
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 .typewriter {
     font-size: 48px;
     margin-bottom: 20px;
-    overflow: hidden; /* Ensure text doesn't overflow */
+    overflow: hidden;
     border-right: .15em solid #ff6b6b;
     white-space: nowrap;
-    width: 14ch; /* Set width based on character count */
+    width: 14ch;
     animation: typing 2s steps(14, end), blink-caret .75s step-end infinite;
 }
 @keyframes typing {
     from { width: 0 }
-    to { width: 14ch } /* Match the width */
+    to { width: 14ch }
 }
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #ff6b6b }
 }
 #home p.description {
-    font-size: 20px; /* Increased font size as per Change 4 */
+    font-size: 20px;
     margin-bottom: 30px;
     max-width: 600px;
     color: #ddd;
@@ -128,255 +128,231 @@ section {
 /* Projects Section */
 #projects {
     padding: 100px 20px;
-    /* background: rgba(0, 0, 0, 0.5); Already defined in section */
 }
 #projects h2 {
     text-align: center;
-    font-size: 42px; /* Increased font size as per Change 4 */
-    color: #ff6b6b; /* Added color to stand out as per Change 4 */
+    font-size: 60px;
+    color: #ff6b6b;
     margin-bottom: 50px;
 }
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns for more projects */
-    gap: 30px; /* Space between grid items */
-    justify-items: center; /* Center items horizontally */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center;
 }
-.project-card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-    margin: 15px;
-    width: 100%; /* Allow cards to fill the grid column */
-    max-width: 600px; /* Prevent excessive stretching */
+
+/* Flip Card Styles */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 400px;
+    perspective: 1000px;
+    max-width: 550px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner,
+.flip-card.touch .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
 }
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+.flip-card-front {
+    background: rgba(255, 255, 255, 0.1);
 }
-.project-image img {
-    width: 100%;
-    height: 200px;
+.flip-card-front h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #ff6b6b;
+}
+.flip-card-front img {
     object-fit: cover;
-    border-bottom: 2px solid #ff6b6b;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #ff6b6b;
+    margin-top: 20px;
 }
-.project-info {
+.flip-card-back {
+    background: rgba(0, 0, 0, 0.9);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    text-align: center;
 }
-.project-info h3 {
-    margin-bottom: 15px;
-    color: #ff6b6b; /* Added color to stand out */
-    font-size: 24px; /* Increased font size as per Change 4 */
-}
-.project-info p {
-    color: #ddd;
+.flip-card-back p {
     margin-bottom: 20px;
+    color: #ddd;
 }
-.project-info .btn {
+.flip-card-back .btn {
     background: #556270;
 }
-.project-info .btn:hover {
+.flip-card-back .btn:hover {
     background: #39424e;
 }
 
 /* Hackathons Section */
 #hackathons {
     padding: 100px 20px;
-    /* background: rgba(0, 0, 0, 0.5); Already defined in section */
 }
 #hackathons h2 {
     text-align: center;
-    font-size: 42px; /* Increased font size as per Change 4 */
-    color: #ff6b6b; /* Added color to stand out as per Change 4 */
+    font-size: 60px;
+    color: #ff6b6b;
     margin-bottom: 50px;
 }
 .hackathons-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 30px; /* Space between grid items */
-    justify-items: center; /* Center items horizontally */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center;
 }
 .hackathon-card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-    margin: 15px;
-    width: 100%; /* Allow cards to fill the grid column */
-    max-width: 600px; /* Prevent excessive stretching */
+    background-color: transparent;
+    width: 100%;
+    height: 400px;
+    perspective: 1000px;
+    max-width: 550px;
+}
+.hackathon-card .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.hackathon-card:hover .flip-card-inner,
+.hackathon-card.touch .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.hackathon-card .flip-card-front,
+.hackathon-card .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    color: #fff;
 }
-.hackathon-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+.hackathon-card .flip-card-front {
+    background: rgba(255, 255, 255, 0.1);
 }
-.hackathon-info {
-    text-align: center;
+.hackathon-card .flip-card-front h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #ff6b6b;
 }
-.hackathon-info h3 {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color: #ff6b6b; /* Added color to stand out */
-    font-size: 24px; /* Increased font size as per Change 4 */
-}
-.placement {
-    background: rgba(255, 107, 107, 0.7); /* Less vibrant color as per Change 3 */
+.hackathon-card .flip-card-front .placement {
+    display: block;
+    margin: 10px auto;
     color: #fff;
     padding: 5px 10px;
     border-radius: 15px;
     font-size: 14px;
+    width: fit-content;
 }
-.hackathon-info p {
-    color: #ddd;
-    margin-bottom: 10px;
+.hackathon-card .flip-card-front .placement.gold {
+    background: rgba(212, 175, 55, 0.8);
 }
-.hackathon-info .btn {
+.hackathon-card .flip-card-front .placement.silver {
+    background: rgba(128, 128, 128, 0.8);
+}
+.hackathon-card .flip-card-front .placement.bronze {
+    background: rgba(205, 127, 50, 0.8);
+}
+.hackathon-card .flip-card-front img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #ff6b6b;
     margin-top: 10px;
+}
+.hackathon-card .flip-card-back {
+    background: rgba(0, 0, 0, 0.9);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.hackathon-card .flip-card-back p {
+    margin-bottom: 20px;
+    color: #ddd;
+}
+.hackathon-card .flip-card-back .btn {
+    background: #556270;
+}
+.hackathon-card .flip-card-back .btn:hover {
+    background: #39424e;
 }
 
 /* Contact Section */
 #contact {
-    padding: 30px 20px; /* Further reduced padding */
-    /* background: rgba(0, 0, 0, 0.5); Already defined in section */
-    position: relative; /* To position email display absolutely */
+    padding: 30px 20px;
+    position: relative;
 }
 #contact h2 {
     text-align: center;
     font-size: 36px;
-    color: #ff6b6b; /* Added color to stand out */
-    margin-bottom: 20px; /* Reduced from 30px */
+    color: #ff6b6b;
+    margin-bottom: 20px;
 }
 .contact-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Reduced gap */
+    gap: 15px;
     position: relative;
 }
 .contact-icon {
     color: #fff;
-    font-size: 25px; /* Reduced icon size */
+    font-size: 25px;
     transition: color 0.3s, transform 0.3s;
-    cursor: pointer; /* Indicate clickable */
+    cursor: pointer;
     position: relative;
 }
 .contact-icon:hover {
     color: #ff6b6b;
     transform: scale(1.2);
 }
-/* Email Display */
-.email-display {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translateY(-50%) translateX(10px);
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border-radius: 5px;
-    display: none; /* Hidden by default */
-    white-space: nowrap;
-    z-index: 1001;
-}
-.email-display.show {
-    display: block;
-}
-
-/* Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; 
-    z-index: 2000; /* Above other elements */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.8); /* Black with opacity */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.modal.show {
-    display: block;
-    opacity: 1;
-}
-.modal-content {
-    background-color: #1a1a1a;
-    margin: 5% auto; /* 5% from top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    border-radius: 10px;
-    position: relative;
-    color: #fff;
-    transform: translateY(-50px);
-    transition: transform 0.3s ease;
-}
-.modal.show .modal-content {
-    transform: translateY(0);
-}
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-}
-.close-button:hover,
-.close-button:focus {
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-}
-.modal-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.modal-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-@media (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-    }
-}
 
 /* Responsive Design */
 @media (max-width: 1400px) {
     section {
-        max-width: 1200px; /* Revert to original max-width on smaller screens */
+        max-width: 1200px;
     }
 }
 @media (max-width: 1200px) {
-    .project-card, .hackathon-card {
-        max-width: 500px; /* Adjust max-width for medium screens */
+    .projects-container,
+    .hackathons-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (max-width: 768px) {
     .projects-container,
     .hackathons-container {
-        grid-template-columns: 1fr; /* 1 column on smaller screens */
+        grid-template-columns: 1fr;
     }
-    .project-card, .hackathon-card {
-        width: 80%; /* Adjust card width for better fit */
+    .flip-card {
+        width: 80%;
     }
 }
 @media (max-width: 600px) {
@@ -391,10 +367,9 @@ section {
         flex-direction: column;
         align-items: center;
     }
-    /* Adjust email display position for small screens */
-    .email-display {
-        left: 50%;
-        top: 100%;
-        transform: translateX(-50%) translateY(10px);
-    }
+}
+
+/* Accessibility Enhancements */
+.hackathon-card .flip-card-front .placement:hover {
+    opacity: 0.9;
 }

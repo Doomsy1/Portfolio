@@ -6,14 +6,14 @@
     <meta charset="UTF-8" />
     <title>Your Portfolio with Interactive Background</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Font Awesome CDN for Social Icons -->
+    <!-- Social Icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 </head>
 <body>
-    <!-- Canvas for Interactive Background -->
+    <!-- Interactive Background -->
     <canvas id="interactive-bg"></canvas>
 
     <!-- Navigation -->
@@ -37,70 +37,76 @@
     <section id="projects">
         <h2>My Projects</h2>
         <div class="projects-container">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="robotic_arm.jpg" alt="Robotic Arm Tomato Pollination">
-                </div>
-                <div class="project-info">
-                    <h3>Robotic Arm Tomato Pollination</h3>
-                    <p>A potential alternative for pollination...</p>
-                    <a href="#" class="btn view-details-btn">View Details</a>
-                </div>
-            </div>
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="arcade_game.jpg" alt="Arcade Game">
-                </div>
-                <div class="project-info">
-                    <h3>Arcade Game</h3>
-                    <p>Chess, Pacman, and Connect 4 all in one place!</p>
-                    <a href="#" class="btn view-details-btn">View Details</a>
+            <div class="project-card flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Robotic Pollinator</h3>
+                        <img src="robotic_arm.jpg" alt="Robotic Pollinator">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>A potential alternative for pollination...</p>
+                        <a href="https://github.com/Airc-Uwindsor/Pollinator" class="btn view-details-btn" target="_blank" rel="noopener noreferrer">View</a>
+                    </div>
                 </div>
             </div>
-            <!-- Project Card 3 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="paint_project.jpg" alt="Paint Project">
-                </div>
-                <div class="project-info">
-                    <h3>Paint Project</h3>
-                    <p>An alternative to ms paint!</p>
-                    <a href="#" class="btn view-details-btn">View Details</a>
-                </div>
-            </div>
-            <!-- Project Card 4 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="league_fair_teams.jpg" alt="League Fair Teams">
-                </div>
-                <div class="project-info">
-                    <h3>League Fair Teams</h3>
-                    <p>An easy way to make balanced teams in League of Legends!</p>
-                    <a href="#" class="btn view-details-btn">View Details</a>
+            <div class="project-card flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Arcade Game</h3>
+                        <img src="arcade_game.jpg" alt="Arcade Game">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Chess, Pacman, and Connect 4 all in one place!</p>
+                        <a href="https://github.com/Doomsy1/ArcadeFSE" class="btn view-details-btn" target="_blank" rel="noopener noreferrer">View</a>
+                    </div>
                 </div>
             </div>
-            <!-- Project Card 5 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="periodic_trend_analysis.jpg" alt="Periodic Trend Analysis">
-                </div>
-                <div class="project-info">
-                    <h3>Periodic Trend Analysis</h3>
-                    <p>An overcomplicated trading strategy for a video game...</p>
-                    <a href="#" class="btn view-details-btn">View Details</a>
+            <div class="project-card flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Paint Project</h3>
+                        <img src="paint_project.jpg" alt="Paint Project">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>An alternative to MS Paint!</p>
+                        <a href="https://github.com/Doomsy1/Paint-Project" class="btn view-details-btn" target="_blank" rel="noopener noreferrer">View</a>
+                    </div>
                 </div>
             </div>
-            <!-- Project Card 6 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="eventsheet.jpg" alt="EventSheet">
+            <div class="project-card flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>League Fair Teams</h3>
+                        <img src="league_fair_teams.jpg" alt="League Fair Teams">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>An easy way to make balanced teams in League of Legends!</p>
+                        <a href="https://github.com/Doomsy1/League-Fair-Teams" class="btn view-details-btn" target="_blank" rel="noopener noreferrer">View</a>
+                    </div>
                 </div>
-                <div class="project-info">
-                    <h3>EventSheet</h3>
-                    <p>A subscription-based trading tool (for a video game)</p>
-                    <a href="#" class="btn view-details-btn">View Details</a>
+            </div>
+            <div class="project-card flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Periodic Trend Analysis</h3>
+                        <img src="periodic_trend_analysis.jpg" alt="Periodic Trend Analysis">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>An overcomplicated trading strategy for a video game...</p>
+                        <a href="https://github.com/Doomsy1" class="btn view-details-btn" target="_blank" rel="noopener noreferrer">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>EventSheet</h3>
+                        <img src="eventsheet.jpg" alt="EventSheet">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>A subscription-based trading tool (for a video game)</p>
+                        <a href="https://docs.google.com/spreadsheets/d/1d4henLN0uOOoIE0GU3u3EsqNK_l0l6J4dVVbK_4f7Ec/edit?usp=sharing" class="btn view-details-btn" target="_blank" rel="noopener noreferrer">View</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,28 +116,43 @@
     <section id="hackathons">
         <h2>Hackathons</h2>
         <div class="hackathons-container">
-            <!-- Hackathon Card 1 -->
-            <div class="hackathon-card">
-                <div class="hackathon-info">
-                    <h3>NASA Space Apps Local Hackathon (University of Windsor) <span class="placement">2nd Place</span></h3>
-                    <p>Made a webapp for farmers to discuss issues and have easy access to NASA data.</p>
-                    <a href="#" class="btn view-details-btn">View Details</a>
+            <div class="hackathon-card flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>NASA Space Apps Local Hackathon (University of Windsor)</h3>
+                        <span class="placement silver">2nd Place</span>
+                        <img src="nasa_space_apps.jpg" alt="NASA Space Apps Hackathon">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Made a web app for farmers to discuss issues and have easy access to NASA data.</p>
+                        <a href="https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/team-massey/?tab=project" class="btn view-details-btn" target="_blank" rel="noopener noreferrer">View</a>
+                    </div>
                 </div>
             </div>
-            <!-- Hackathon Card 2 -->
-            <div class="hackathon-card">
-                <div class="hackathon-info">
-                    <h3>Massey Hacks X <span class="placement">Best Overall</span></h3>
-                    <p>Made a remote controlled rover with a 2 axis arm with a gripper and 3 cameras.</p>
-                    <a href="#" class="btn view-details-btn">View Details</a>
+            <div class="hackathon-card flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Massey Hacks X</h3>
+                        <span class="placement gold">Best Overall</span>
+                        <img src="massey_hacks_x.jpg" alt="Massey Hacks X">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Made a remote-controlled rover with a 2-axis arm with a gripper and 3 cameras.</p>
+                        <a href="https://devpost.com/software/2ak-bot" class="btn view-details-btn" target="_blank" rel="noopener noreferrer">View</a>
+                    </div>
                 </div>
             </div>
-            <!-- Hackathon Card 3 -->
-            <div class="hackathon-card">
-                <div class="hackathon-info">
-                    <h3>Massey Hacks IX <span class="placement">Best Game</span></h3>
-                    <p>Made a platformer called "Switch-Up"</p>
-                    <a href="#" class="btn view-details-btn">View Details</a>
+            <div class="hackathon-card flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Massey Hacks IX</h3>
+                        <span class="placement silver">Best Game</span>
+                        <img src="massey_hacks_ix.jpg" alt="Massey Hacks IX">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Made a platformer called "Switch-Up".</p>
+                        <a href="https://devpost.com/software/switch-up" class="btn view-details-btn" target="_blank" rel="noopener noreferrer">View</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,14 +171,6 @@
                 <i class="fab fa-linkedin"></i>
             </a>
             <a
-                href="https://www.instagram.com/ariobarin/"
-                target="_blank"
-                class="contact-icon"
-                aria-label="Instagram"
-            >
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a
                 href="https://discordapp.com/users/368159951350398977"
                 target="_blank"
                 class="contact-icon"
@@ -174,35 +187,15 @@
                 <i class="fab fa-github"></i>
             </a>
             <a
-                href="https://leetcode.com/u/Doomsy/"
+                href="https://devpost.com/Doomsy1"
                 target="_blank"
                 class="contact-icon"
-                aria-label="LeetCode"
+                aria-label="Devpost"
             >
                 <i class="fas fa-code"></i>
             </a>
-            <!-- Email Button -->
-            <div class="contact-icon" id="email-button">
-                <i class="fas fa-envelope"></i>
-            </div>
-            <!-- Hidden Email Display -->
-            <div id="email-display" class="email-display">
-                arioostov@gmail.com
-            </div>
         </div>
     </section>
-
-    <!-- Modal Structure -->
-    <div id="detail-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2 id="modal-title">Detail Title</h2>
-            <div class="modal-body">
-                <img src="detail-image.jpg" alt="Detail Image" class="modal-image">
-                <p id="modal-description">Detailed information goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </div>
-    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>
